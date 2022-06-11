@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,16 +13,29 @@ import { PrincipalJefeComponent } from './principal-jefe/principal-jefe.componen
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+//prime ng imports
+import {CalendarModule} from 'primeng/calendar';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 //http clñient
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { VerPermisosComponent } from './ver-permisos/ver-permisos.component';
+import { CrearPermisoComponent } from './crear-permiso/crear-permiso.component';
+import { ModiPermisosComponent } from './modi-permisos/modi-permisos.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PrincipalSupervisorComponent,
-    PrincipalJefeComponent
+    PrincipalJefeComponent,
+    VerPermisosComponent,
+    CrearPermisoComponent,
+    ModiPermisosComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +44,13 @@ import {HttpClientModule} from '@angular/common/http'
     MatButtonModule,
     MatInputModule,
     HttpClientModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule,
+    MatTableModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    CalendarModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

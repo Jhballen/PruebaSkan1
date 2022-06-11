@@ -1,4 +1,7 @@
 export class User {
-    user_login!: string;
+    id!: number;
+    name!: string;
+    userLogin!: string;
     password!: string;
+    charge!: string;
 }

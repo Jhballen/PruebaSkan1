@@ -1,5 +1,6 @@
 import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../environment/environment';
 import { User } from '../models/user.model';
 import { LoginService } from '../service/login.service'
 
@@ -32,16 +33,23 @@ export class LoginComponent implements OnInit {
 
   loguear () {
 
-    console.log(this.usuarios);
-
+    
     this.usuarios.forEach(user => {
-      if(user.user_login == this.userName) {
+     
+      if(user.userLogin == this.userName) {
         this.userDB = user;
       }
     });
 
-    if (this.userDB.password == this.password) {
+    console.log(this.userDB);
+    if (this.userDB.password == this.password && this.userDB.charge === "SUPERVISOR") {
       this.link = "/supervisor";
+      environment.user = this.userDB;
+    } else if (this.userDB.password == this.password && this.userDB.charge.includes('JEFE')) {
+      this.link = "/jefe"
+      environment.user = this.userDB;
+    } else {
+      console.log("Contraseña o usuario incorrecto");
     }
 
   }

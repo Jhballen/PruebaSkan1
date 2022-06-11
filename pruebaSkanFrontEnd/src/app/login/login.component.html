@@ -1,23 +1,22 @@
-<header>
-    <h1>Ingresar</h1>
-</header>
 
-
-<body>
+<body class="contenido">
     
+    <h1>Ingresar</h1>
     <div class="example-button-row">
        
         <div class="inputs">
        
-        <mat-form-field appearance="fill">
-            <mat-label>Nombre de usuario:</mat-label>
-            <input matInput [(ngModel)] ="userName">
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            <mat-label>Contraseña:</mat-label>
-            <input matInput [(ngModel)] ="password">
-        </mat-form-field>
+            <form class="nombre">
+                <mat-form-field class="nombre-input" appearance="fill">
+                <mat-label>Nombre de usuario:</mat-label>
+                <input matInput placeholder="Ej. Jballen"  [(ngModel)]="userName" name="username">
+                </mat-form-field>
+            </form>
+   
+            <mat-form-field appearance="fill">
+                <mat-label>Ingrese su contraseña:</mat-label>
+                <input matInput [(ngModel)]="password">
+            </mat-form-field>
         </div>
        
         <button mat-raised-button color="primary" (click)="loguear()" [routerLink]="link">Ingresar</button>
